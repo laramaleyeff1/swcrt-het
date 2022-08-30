@@ -17,6 +17,7 @@
 
 Helper functions for binary outcome and continuous outcome simulation studies for 
 "Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials".
+    
     .
     ├── helper.R                    # Contains helper functions for binary_expt_estimation, binary_overall_estimation, and cont_overall_estimation. Functions include code to fit each model and report parameter estimates and code to run various types of bootstrap resamples.
     └── README.md
