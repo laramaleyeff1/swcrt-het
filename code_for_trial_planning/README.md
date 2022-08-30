@@ -16,6 +16,7 @@
 ## About The Project
 
 This folder contains the code for trial planning mentioned in Section 5.1 and Web Appendix in “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials”.
+
     .
     ├── compute_var_ratio.R                       # Code to compute variance ratio of Model 4 vs. Model 1 that was used to create Table S6
     ├── sim_swcrt_binary.R                        # Code to simulate a stepped wedge CRT with binary outcomes, for the purposes of estimating study power
