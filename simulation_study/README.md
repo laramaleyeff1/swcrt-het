@@ -19,17 +19,17 @@ This folder contains the simulation code and results for “Assessing exposure-t
 
     .
     └── binary_estimation: Folder containing simulation code and results for assessing estimation of the overall treatment effect in simulated datasets with a binary outcome
-      ├── README.md
-      ├── bash.sh
-      ├── main.R
-      └── results 
+        ├── README.md
+        ├── bash.sh
+        ├── main.R
+        └── results 
     └── cont_estimation: Folder containing simulation code and results for assessing estimation of the overall treatment effect in simulated datasets with a continuous outcome
-      ├── README.md
-      ├── bash.sh
-      ├── main.R
-      └── results
+        ├── README.md
+        ├── bash.sh
+        ├── main.R
+        └── results
     ├── helpers: helper functions for binary_estimation and cont_estimation
-    │   ├── helper.R
+        ├── helper.R
         ├── README.md
     ├── parse_simulation_results.R: Code to parse simulation results and make tables shown in paper
     └── tests: Folder containing simulation code and results for assessing test Type I error and power (permutation, LR tests)
