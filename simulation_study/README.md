@@ -19,7 +19,8 @@ This folder contains the simulation code and results for “Assessing exposure-t
 
     .
     ├── README.md
-    ├── binary_expt_estimation: Folder containing simulation code and results for assessing estimation of the exposure-time specific effects in simulated datasets with a binary outcome
+    ├── binary_expt_estimation: Folder containing simulation code and results for assessing estimation of the exposure-time specific 
+    effects in simulated datasets with a binary outcome
         ├── results
         ├── results_no_boots
         ├── README.md
@@ -27,13 +28,15 @@ This folder contains the simulation code and results for “Assessing exposure-t
         ├── bin_boots_10.Rda
         ├── main.R                  
         └── param_no_boots.Rda
-    ├── binary_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment effect in simulated datasets with a binary outcome
+    ├── binary_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment 
+    effect in simulated datasets with a binary outcome
         ├── results
         ├── README.md         
         ├── bash.sh                     
         ├── bin_all_less.Rda
         └── main.R  
-    ├── cont_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment effect in simulated datasets with a continuous outcome
+    ├── cont_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment 
+    effect in simulated datasets with a continuous outcome
         ├── results
         ├── README.md 
         ├── bash.sh 
