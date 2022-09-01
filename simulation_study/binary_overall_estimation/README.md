@@ -16,7 +16,9 @@
 ## About The Project
 
 This folder contains the simulation code and results for binary outcome simulations in “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials.” We also provide the code to create the simulation tables and figures shown in the paper.
-These simulations assess estimation of the average treatment effect
+These simulations assess estimation of the average treatment effect. The simulations run in parallel on 10 cores and require gcc/7.1.0 and R/4.0.5.
+
+CRT = Cluster randomized trial
        
         .
         ├── README.md
