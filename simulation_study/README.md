@@ -18,15 +18,15 @@
 This folder contains the simulation code and results for “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials.” We also provide the code to create the simulation tables and figures shown in the paper.
 
     .
-    └── README.md
-    └── binary_expt_estimation: Folder containing simulation code and results for assessing estimation of the exposure-time specific effects in simulated datasets with a binary outcome
-        ├── README.md
-        ├── bash.sh               
-        ├── main.R                  
-        ├── bin_boots_10.Rda
-        ├── param_no_boots.Rda
+    ├── README.md
+    ├── binary_expt_estimation: Folder containing simulation code and results for assessing estimation of the exposure-time specific effects in simulated datasets with a binary outcome
         ├── results
-        └── results_no_boots
+        ├── results_no_boots
+        ├── README.md
+        ├── bash.sh 
+        ├── bin_boots_10.Rda
+        ├── main.R                  
+        └── param_no_boots.Rda
     ├── binary_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment effect in simulated datasets with a binary outcome
         ├── README.md
         ├── bash.sh               
@@ -34,20 +34,20 @@ This folder contains the simulation code and results for “Assessing exposure-t
         ├── bin_all_less.Rda
         └── results
     ├── cont_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment effect in simulated datasets with a continuous outcome
-        ├── README.md
-        ├── bash.sh
-        ├── main.R
+        ├── results
+        ├── README.md 
+        ├── bash.sh 
         ├── cont_all.Rda
-        └── results
+        └── main.R
     ├── helpers: helper functions for binary_estimation and cont_estimation
         ├── README.md
         └── helper.R
     ├── tests: Folder containing simulation code and results for assessing test Type I error and power (permutation, LR tests)
-        ├── README.md
-        ├── bash.sh
+        ├── results
+        ├── README.md 
+        ├── bash.sh 
         ├── main.R
-        ├── power.Rda
-        └── results
+        └── power.Rda
     └── parse_simulation_results.R: Code to parse simulation results and make tables shown in paper
 
 
