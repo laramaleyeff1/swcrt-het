@@ -15,7 +15,7 @@
 <!-- ABOUT  -->
 ## About The Project
 
-This folder contains the simulation code and results for all continuous outcome simulations in “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials.” We also provide the code to create the simulation tables and figures shown in the paper.
+This folder contains the simulation code and results for binary outcome simulations in “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials.” This study focuses on assessing estimation of the average treatment effect. We also provide the code to create the simulation tables and figures shown in the paper. 
 
         .
         ├── README.md
