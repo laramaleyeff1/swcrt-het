@@ -28,18 +28,18 @@ This folder contains the simulation code and results for “Assessing exposure-t
         ├── main.R                  
         └── param_no_boots.Rda
     ├── binary_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment effect in simulated datasets with a binary outcome
-        ├── README.md
-        ├── bash.sh               
-        ├── main.R                  
+        ├── results
+        ├── README.md         
+        ├── bash.sh                     
         ├── bin_all_less.Rda
-        └── results
+        └── main.R  
     ├── cont_overall_estimation: Folder containing simulation code and results for assessing estimation of the average treatment effect in simulated datasets with a continuous outcome
         ├── results
         ├── README.md 
         ├── bash.sh 
         ├── cont_all.Rda
         └── main.R
-    ├── helpers: helper functions for binary_estimation and cont_estimation
+    ├── helpers: helper functions for binary_expt_estimation, binary_overall_estimation, and cont_estimation
         ├── README.md
         └── helper.R
     ├── tests: Folder containing simulation code and results for assessing test Type I error and power (permutation, LR tests)
