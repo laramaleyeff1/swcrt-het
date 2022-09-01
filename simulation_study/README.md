@@ -18,6 +18,7 @@
 This folder contains the simulation code and results for “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials.” We also provide the code to create the simulation tables and figures shown in the paper.
 
     .
+    └── README.md
     └── binary_expt_estimation: Folder containing simulation code and results for assessing estimation of the exposure-time specific effects in simulated datasets with a binary outcome
         ├── README.md
         ├── bash.sh               
@@ -39,15 +40,16 @@ This folder contains the simulation code and results for “Assessing exposure-t
         ├── cont_all.Rda
         └── results
     ├── helpers: helper functions for binary_estimation and cont_estimation
-        ├── helper.R
-        └── README.md
-    ├── parse_simulation_results.R: Code to parse simulation results and make tables shown in paper
-    └── tests: Folder containing simulation code and results for assessing test Type I error and power (permutation, LR tests)
+        ├── README.md
+        └── helper.R
+    ├── tests: Folder containing simulation code and results for assessing test Type I error and power (permutation, LR tests)
         ├── README.md
         ├── bash.sh
         ├── main.R
         ├── power.Rda
         └── results
+    └── parse_simulation_results.R: Code to parse simulation results and make tables shown in paper
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
