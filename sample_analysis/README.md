@@ -19,8 +19,8 @@ Sample code for analyzing stepped wedge cluster randomized trials using Model 5,
 
     .
     ├── README.md
-    ├── sample_analysis.R       # Code to fit Model 5 and run various tests of heterogeneity on a sample data, data.Rda
-    └── data.Rda                # Sample data from a stepped wedge CRT
+    ├── data.Rda                # Sample data from a stepped wedge CRT
+    └── sample_analysis.R       # Code to fit Model 5 and run various tests of heterogeneity on a sample data, data.Rda
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
