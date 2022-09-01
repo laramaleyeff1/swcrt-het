@@ -22,7 +22,7 @@ CRT = Cluster randomized trial
        
         .
         ├── results                     # Folder of raw csv results for all scenarios
-        ├──README.md
+        ├── README.md
         ├── bash.sh                     # Bash script to run from computing cluster, to run: sbatch bash.sh B n_per t_max each sd_expt    
         ├── bin_all_less.Rda            # Results for all scenarios
         └── main.R                      # The main code of the simulation study. Generates a stepped wedge CRT with a variety of calendar and exposure time
