@@ -15,11 +15,12 @@
 <!-- ABOUT  -->
 ## About The Project
 
-Sample code for analyzing stepped wedge cluster randomized trials using Model 5, from “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials”.
+Sample code for analyzing stepped wedge cluster randomized trials using Model 5, from “Assessing exposure-time treatment effect heterogeneity in stepped wedge cluster randomized trials”. CRT = Cluster randomized trial
 
     .
-    ├── compute_var_ratio.R                       # Code to fit Model 5 and run various tests of heterogeneity on a sample dataset.
-    └── README.md
+    ├── README.md
+    ├── compute_var_ratio.R     # Code to fit Model 5 and run various tests of heterogeneity on a sample data, data.Rda
+    └── data.Rda                # Sample data from a stepped wedge CRT
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
