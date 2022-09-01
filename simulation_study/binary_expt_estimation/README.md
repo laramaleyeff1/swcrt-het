@@ -20,7 +20,9 @@ This folder contains the simulation code and results for all continuous outcome 
         .
         ├── README.md
         ├── bash.sh                     # Bash script to run from computing cluster, to run: sbatch bash.sh B n_per t_max each sd_expt         
-        ├── main.R                      # The main code of the simulation study. Generates a stepped wedge CRT with a variety of calendar and exposure time                                         # patterns and fits Models 1-5. Outputs results to "results" folder. Assumes that first group of clusters crossover                                         # in the second time period, with an equal number crossing over in each time period t, for t>=2.\
+        ├── main.R                      # The main code of the simulation study. Generates a stepped wedge CRT with a variety of calendar and exposure time
+                                        # patterns and fits Models 1-5. Outputs results to "results" folder. Assumes that first group of clusters crossover
+                                        # in the second time period, with an equal number crossing over in each time period t, for t>=2.
 
                                         # The scenarios used in the code are as follows:
                                           # Scenario 1 = no exposure time treatment effect heterogeneity
