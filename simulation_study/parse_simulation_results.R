@@ -5,6 +5,7 @@ library(xtable)
 library(ggplot2)
 library(e1071)
 library(cowplot)
+library(tidyr)
 
 # set working directory to source file location
 
@@ -81,10 +82,10 @@ power %>%
   facet_wrap(~n_expt, scales = "free",nrow=2
   ) 
 
-# ggsave(file = "./tests/power.eps",
-#        width=10,
-#        height=9,
-#        device=cairo_ps)
+ggsave(file = "./tests/power.eps",
+       width=6,
+       height=5,
+       device=cairo_ps)
 
 
 ####################################
@@ -337,7 +338,7 @@ p2 <- param_no_boots %>%
   geom_line() + 
   geom_point() +
   facet_wrap(~scenario)+
-  labs(x=expression(E[kt]), y=expression(g(E[kt]))) 
+  labs(x=expression(e), y=expression(g(e))) 
 
 plot_grid(p1, p2, labels=c("A", "B"),nrow=2)
 # ggsave(file = "./binary_expt_estimation/etime_pattern.eps",
@@ -473,15 +474,24 @@ bin_boots_summ = bin_boots_10 %>%
   ) 
 
 
+bin_boots_summ %>% 
+  filter(expt != 0, scenario %in% c(10,22)) %>% 
+  group_by(model) %>%
+  dplyr::summarize(mean(coverage_boots_normal_k))
 
 bin_boots_summ %>% 
   filter(expt != 0, model %in% c(1:5),scenario %in% c(10,22)) %>% 
-  mutate(coverage=100*coverage_boots_normal_k,
+  mutate(p_coverage=coverage_boots_normal_k,
+          coverage=100*coverage_boots_normal_k,
          scenario = factor(scenario, levels=1:24,
                            labels=c(paste("Scenario A",1:12,sep=""),
                                     paste("Scenario B",1:12,sep="")))) %>%
   ggplot(aes(x=expt, y=coverage, col=factor(model))) +
+  geom_errorbar(aes(ymin = 100*(p_coverage - 1.96*sqrt(p_coverage*(1-p_coverage)/1000)), 
+                    ymax = 100*(p_coverage + 1.96*sqrt(p_coverage*(1-p_coverage)/1000)))) +
   geom_hline(yintercept = 95)+
+  geom_hline(yintercept = 96.4, linetype="dotted")+
+  geom_hline(yintercept = 93.6, linetype="dotted")+
   geom_point(aes(col=factor(model),size=width), alpha=0.6)+
   scale_colour_manual(name = "",
                       labels = c("Model 1",

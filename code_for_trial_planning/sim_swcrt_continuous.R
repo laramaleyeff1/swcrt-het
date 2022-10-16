@@ -17,12 +17,11 @@ nsims = 200
 # R is the number of permutations in permuation test
 R = 2000
 intercept = 0.3
-overall_eff = 1
+average_eff = 1
 sigma_cluster_sq = 0.1
 sigma_expt_sq = 0.2
 sigma_epsilon_sq = 1
 n_per = 30
-sd_n_per = 0
 t_max = 8
 k_max = 7
 # crossover_t must have length k_max
@@ -37,16 +36,14 @@ expt_eff <- c(0,
 # Simulates a SW-CRT based on Model 5, and fits Model 5
 # @param {intercept} Value of mu (overall intercept)
 # @param {betas} Vector of time-specific effect estimates
-# @param {overall_eff} Value of phi
+# @param {average_eff} Value of average treatment effect
 # @param {sigma_cluster_sq} Value of the random cluster intercept
 # (sigma_alpha^2)
 # @param {sigma_expt_sq} Value of the random exposure time slope
 # (sigma_delta^2)
 # @param {sigma_epsilon_sq} Value of the individual level heterogeneity
-# @param {n_per} The average number of individuals per cluster-time 
-# period
-# @param {sd_n_per} Standard deviation of number of individuals per cluster-time 
-# period (0=all equal)
+# @param {n_per} A vector of length k_max*t_max of cluster-period sizes,
+# or a constant cluster-period size
 # @param {t_max} Number of time periods
 # @param {k_max} [default] Number of clusters (defaults to t_max-1)
 # @param {crossover_t} [default] Vector with time of cross-over
@@ -56,12 +53,11 @@ expt_eff <- c(0,
 # LR test, permutation test, and Model 5 LR test, respectively.
 sim <- function(intercept, 
                 betas, 
-                overall_eff,
+                average_eff,
                 sigma_cluster_sq,
                 sigma_expt_sq,
                 sigma_epsilon_sq,
                 n_per,
-                sd_n_per,
                 t_max,
                 k_max,
                 crossover_t
@@ -72,16 +68,19 @@ sim <- function(intercept,
     return()
   }
   
-  count = round(rnorm(t_max*k_max, n_per, sd_n_per))
-  count[count < 2] = 2
-  freq_table = expand.grid(t = rep(1:t_max),
-                           k = rep(1:k_max))
+  if (length(n_per) == 1) {
+    count = rep(n_per, t_max*k_max)
+  } else {
+    count = n_per
+  }
+  
+  freq_table = expand.grid(k = rep(1:k_max),
+                           t = rep(1:t_max)
+  )
   freq_table$count = count
   
   data = freq_table[rep(1:nrow(freq_table), freq_table[["count"]]), ]
   N = nrow(data)
-  rownames(data) = 1:N
-  data$id = 1:N
   
   data = data %>%
     mutate(id = 1:N,
@@ -91,14 +90,14 @@ sim <- function(intercept,
                         factor(cross_t,
                             labels=crossover_t))))
   
-  data$expt <- data$t - data$cross_t
+  data$expt <- data$t - data$cross_t + 1
   data[data$expt<0,]$expt = 0
   data$trt = ifelse(data$expt==0,0,1)
   
   cluster_ranef <- rnorm(k_max, 0, sqrt(sigma_cluster_sq))
  
   data$Y <- intercept +
-    overall_eff*data$trt + 
+    average_eff*data$trt + 
     apply(data,
           1,
           function(x) {
@@ -159,12 +158,11 @@ sim <- function(intercept,
 
 out <- foreach(iter = 1:nsims, .combine=rbind) %do% sim(intercept, 
                                                     betas, 
-                                                    overall_eff,
+                                                    average_eff,
                                                     sigma_cluster_sq,
                                                     sigma_expt_sq,
                                                     sigma_epsilon_sq,
                                                     n_per,
-                                                    sd_n_per,
                                                     t_max,
                                                     k_max,
                                                     crossover_t)
