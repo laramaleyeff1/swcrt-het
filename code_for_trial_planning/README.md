@@ -19,10 +19,10 @@ This folder contains the code for trial planning mentioned in Section 5 and Web 
 
     .
     ├── README.md 
-    ├── var_formula_model4.R                # Code to compute variance of Model 4 for continuous outcome using derived formula (Web Appendix F)
-    ├── sim_swcrt_binary.R                 # Code to simulate a stepped wedge CRT with binary outcomes, for the purposes of estimating 
+    ├── ATE.fixed.power.R                # Code to compute variance of Model 4 for continuous outcome using derived formula (Web Appendix F)
+    ├── ATE.sim.power.binary.R                 # Code to simulate a stepped wedge CRT with binary outcomes, for the purposes of estimating 
                                            # study power
-    └── sim_swcrt_continuous.R             # Code to simulate a stepped wedge CRT with continuous outcomes, for the purposes of estimating 
+    └── ATE.sim.power.cont.R           # Code to simulate a stepped wedge CRT with continuous outcomes, for the purposes of estimating 
                                            # study power
      
 
